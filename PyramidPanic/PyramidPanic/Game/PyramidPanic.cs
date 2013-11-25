@@ -63,8 +63,6 @@ namespace PyramidPanic
                 (Keyboard.GetState().IsKeyDown(Keys.Escape)))
                 this.Exit();
 
-            
-
             base.Update(gameTime);
         }
 
