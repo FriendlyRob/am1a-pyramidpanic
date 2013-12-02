@@ -12,13 +12,13 @@ using Microsoft.Xna.Framework.Media;
 
 namespace PyramidPanic
 {
-    public class StartScene : IState // De class StartScene implementeert de interface IState
+    public class HelpScene : IState
     {
-        // Fields can de class StartScene
+        // Fields can de class helpscene
         private PyramidPanic game;
 
-        // Contructor van de StartScene-class krijgt een object mee van het type PyramidPanic
-        public StartScene(PyramidPanic game)
+        // Contructor van de helpscene-class krijgt een object mee van het type PyramidPanic
+        public HelpScene(PyramidPanic game)
         {
             this.game = game;
         }
@@ -40,13 +40,13 @@ namespace PyramidPanic
         // en update alle variabelen, methods enz......
         public void Update(GameTime gametime)
         {
-            if (Input.EdgeDetectKeyDown(Keys.Right) || Input.EdgeDetectMousePressLeft())
+            if (Input.EdgeDetectKeyDown(Keys.Right))
             {
-                this.game.IState = this.game.PlayScene;
+                this.game.IState = this.game.GameOverScene;
             }
             if (Input.EdgeDetectKeyDown(Keys.Left))
             {
-                this.game.IState = this.game.GameOverScene;
+                this.game.IState = this.game.PlayScene;
             }
         }
 
@@ -54,7 +54,7 @@ namespace PyramidPanic
         // En tekent de textures op het canvas.
         public void Draw(GameTime gametime)
         {
-            this.game.GraphicsDevice.Clear(Color.YellowGreen);
+            this.game.GraphicsDevice.Clear(Color.Beige);
         }
     }
 }
