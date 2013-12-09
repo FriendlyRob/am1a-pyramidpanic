@@ -56,15 +56,8 @@ namespace PyramidPanic
         // en update alle variabelen, methods enz......
         public void Update(GameTime gametime)
         {
-            if (Input.EdgeDetectKeyDown(Keys.Right) || Input.EdgeDetectMousePressLeft())
-            {
-                this.game.IState = this.game.PlayScene;
-            }
-            if (Input.EdgeDetectKeyDown(Keys.Left))
-            {
-                this.game.IState = this.game.GameOverScene;
-            }
-            menu.Update(gametime);
+            // Hier wordt de updatemethod van het menu object aangeroepen
+            this.menu.Update(gametime);
         }
 
         // Draw methode. Deze methode word normaal 60 keer per seconde aangeroepen.
