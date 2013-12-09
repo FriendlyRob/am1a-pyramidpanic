@@ -64,6 +64,7 @@ namespace PyramidPanic
             {
                 this.game.IState = this.game.GameOverScene;
             }
+            menu.Update(gametime);
         }
 
         // Draw methode. Deze methode word normaal 60 keer per seconde aangeroepen.

@@ -15,15 +15,20 @@ namespace PyramidPanic
     public class Menu
     {
         // Fields
+        // Maak een enumeration voor de buttons die op het scherm te zien zijn
+        private enum Buttons { Start, Load, Help, Scores, Quit }
+
+        // Maak een variabele van het type Buttons en geef hem de waarde Buttons.Start
+        private Buttons buttonActive = Buttons.Start;
+
         // Maak een variabele (reference) van het type Image
-        private Image start;
-        private Image load;
-        private Image help;
-        private Image scores;
-        private Image quit;
+        private Image start,load, help, scores, quit;
 
         // Maak een variabele (reference) van het type PyramidPanic
         private PyramidPanic game;
+
+        // Maak een variabele aan activeColor. Dit is de kleur van de actieve knop
+        private Color activeColor = Color.Gold;
 
         // Constructor
         public Menu(PyramidPanic game)
@@ -49,7 +54,25 @@ namespace PyramidPanic
         // Update
         public void Update(GameTime gameTime)
         {
-
+            // Maak een switch case instructie voor de variabele buttonActive
+            switch (this.buttonActive)
+            {
+                case Buttons.Start:
+                    this.start.Color = this.activeColor;
+                    break;
+                case Buttons.Load:
+                    this.load.Color = this.activeColor;
+                    break;
+                case Buttons.Help:
+                    this.help.Color = this.activeColor;
+                    break;
+                case Buttons.Scores:
+                    this.scores.Color = this.activeColor;
+                    break;
+                case Buttons.Quit:
+                    this.quit.Color = this.activeColor;
+                    break;
+            }
         }
 
         // Draw
