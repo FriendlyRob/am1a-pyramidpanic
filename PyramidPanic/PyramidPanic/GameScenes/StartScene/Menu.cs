@@ -89,12 +89,20 @@ namespace PyramidPanic
                     this.start.Color = this.activeColor;
                     break;
                 case Buttons.Load:
+                    if (Input.EdgeDetectKeyDown(Keys.Enter))
+                    {
+                        this.game.IState = this.game.LoadScene;
+                    }
                     this.load.Color = this.activeColor;
                     break;
                 case Buttons.Help:
                     this.help.Color = this.activeColor;
                     break;
                 case Buttons.Scores:
+                    if (Input.EdgeDetectKeyDown(Keys.Enter))
+                    {
+                        this.game.IState = this.game.ScoresScene;
+                    }
                     this.scores.Color = this.activeColor;
                     break;
                 case Buttons.Quit:
