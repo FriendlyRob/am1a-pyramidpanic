@@ -1,5 +1,4 @@
-﻿// met using kan je een XNA codebibliotheek gebruiken in je class
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using Microsoft.Xna.Framework;
@@ -14,43 +13,53 @@ namespace PyramidPanic
 {
     public class PlayScene : IState
     {
-        // Fields can de class PlayScene
+        //FieldAccessException van decimal class PlayScene
         private PyramidPanic game;
+        private Scorpion scorpion;
+        private Beetle beetle;
+        //private Explorer explorer;
 
-        // Contructor van de PlayScene-class krijgt een object mee van het type PyramidPanic
+        // Constructor van PlayScene-class krijgt een object game mee van het type PyramidPanic
         public PlayScene(PyramidPanic game)
         {
             this.game = game;
+            this.Initialize();
         }
 
-        // Initialize mehode. Deze methode initialiseert (geeft startwaarden aan variabelen)
-        // Void will zeggen dat er niets teruggegeven wordt
+        //initialize methode. Deze methode initialiseert (geeft startwaarden aan variabelen)
+        //void wil zeggen dat er niets teruggegeven wordt.
         public void Initialize()
         {
-
+            this.LoadContent();
         }
 
-        // LoadContent methode. Deze methode maakt nieuwe objecten aan van de verschillende classes
+        //loadcontent methode. Deze methode maakt nieuwe objecten aan van de verschillende
+        //classes.
         public void LoadContent()
         {
-
+            this.beetle = new Beetle(this.game, new Vector2(100f,300f));
+            this.scorpion = new Scorpion(this.game, new Vector2(100f, 300f));
         }
 
-        // Update methode. Deze methode wordt normaal 60 keer per seconde aangeroepen.
-        // en update alle variabelen, methods enz......
-        public void Update(GameTime gametime)
+        //update methode. Deze methode wordt normaal 60 maal per seconde aangeroepen.
+        //en update alle variabelen, methods enz...
+        public void Update(GameTime gameTime)
         {
             if (Input.EdgeDetectKeyDown(Keys.B))
             {
                 this.game.IState = this.game.StartScene;
             }
+            this.beetle.Update(gameTime);
+            this.scorpion.Update(gameTime);
         }
 
-        // Draw methode. Deze methode word normaal 60 keer per seconde aangeroepen.
-        // En tekent de textures op het canvas.
-        public void Draw(GameTime gametime)
+        //draw methode. Deze methode wordt normaal 60 maal per seconde aangeroepen en 
+        // tekent de textures op het canvas
+        public void Draw(GameTime gameTime)
         {
-            this.game.GraphicsDevice.Clear(Color.Blue);
+            this.game.GraphicsDevice.Clear(Color.White);
+            this.beetle.Draw(gameTime);
+            this.scorpion.Draw(gameTime);
         }
     }
 }

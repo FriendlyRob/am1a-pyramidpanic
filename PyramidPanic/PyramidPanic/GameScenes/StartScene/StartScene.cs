@@ -1,5 +1,4 @@
-﻿// met using kan je een XNA codebibliotheek gebruiken in je class
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using Microsoft.Xna.Framework;
@@ -12,68 +11,67 @@ using Microsoft.Xna.Framework.Media;
 
 namespace PyramidPanic
 {
-    public class StartScene : IState // De class StartScene implementeert de interface IState
+    public class StartScene : IState //de class startscene implementeert de interface IState
     {
-        // Fields can de class StartScene
+        //FieldAccessException van decimal class StartScene
         private PyramidPanic game;
 
-        // Maak een variabele (reference) aan van de Image class genaamd background
+        // twee nieuwe instaties Background, title Gemaakt.
         private Image background;
-
-        // Maak een variabele (reference) aan van de Image class genaamd title
         private Image title;
 
-        // Maak een variabele (reference) aan van de Menu class genaamd menu
+        //Maak een variabele (reference) aan van de Menu class genaamd menu
         private Menu menu;
 
-        // Contructor van de StartScene-class krijgt een object mee van het type PyramidPanic
+        // Constructor van StartScene-class krijgt een object game mee van het type PyramidPanic
         public StartScene(PyramidPanic game)
         {
             this.game = game;
 
-            // Roep de Initialize method aan
-            this.Initialize();
+            //roep de initialize method aan
+            this.initialize();
         }
 
-        // Initialize mehode. Deze methode initialiseert (geeft startwaarden aan variabelen)
-        // Void will zeggen dat er niets teruggegeven wordt
-        public void Initialize()
+        //initialize methode. Deze methode initialiseert (geeft startwaarden aan variabelen)
+        //void wil zeggen dat er niets teruggegeven wordt.
+        public void initialize()
         {
-            // Roep de LoadContent methode aan
+            //roep de loadcontent method aan
             this.LoadContent();
         }
 
-        // LoadContent methode. Deze methode maakt nieuwe objecten aan van de verschillende classes
+        //loadcontent methode. Deze methode maakt nieuwe objecten aan van de verschillende
+        //classes.
         public void LoadContent()
         {
-            // Nu maken we twee objecten (instantie) van de class Image
+            // nu maken we een object aan (instantie van de class Image)
             this.background = new Image(this.game, @"StartScene\Background", Vector2.Zero);
             this.title = new Image(this.game, @"StartScene\Title", new Vector2(100f, 30f));
             this.menu = new Menu(this.game);
         }
 
-        // Update methode. Deze methode wordt normaal 60 keer per seconde aangeroepen.
-        // en update alle variabelen, methods enz......
-        public void Update(GameTime gametime)
+        //update methode. Deze methode wordt normaal 60 maal per seconde aangeroepen.
+        //en update alle variabelen, methods enz...
+        public void Update(GameTime gameTime)
         {
-            // Hier wordt de updatemethod van het menu object aangeroepen
-            this.menu.Update(gametime);
+            this.menu.Update(gameTime);
         }
 
-        // Draw methode. Deze methode word normaal 60 keer per seconde aangeroepen.
-        // En tekent de textures op het canvas.
-        public void Draw(GameTime gametime)
+        //draw methode. Deze methode wordt normaal 60 maal per seconde aangeroepen en 
+        // tekent de textures op het canvas
+        public void Draw(GameTime gameTime)
         {
-            this.game.GraphicsDevice.Clear(Color.YellowGreen);
+            this.game.GraphicsDevice.Clear(Color.DarkOrange);
 
-            // Roep de Draw methode aan van het background object
-            this.background.Draw(gametime);
+            //Roep de draw method aan van het beackground object
+            this.background.Draw(gameTime);
 
-            // Roep de Draw methode aan van het title object
-            this.title.Draw(gametime);
+            //rRoep de Draw method aan van het title object
+            this.title.Draw(gameTime);
 
-            // Roep de Draw methode aan van het menu object
-            this.menu.Draw(gametime);
+            //Roep de draw method aan van het menu object
+            this.menu.Draw(gameTime);
         }
+
     }
 }

@@ -1,5 +1,4 @@
-﻿// met using kan je een XNA codebibliotheek gebruiken in je class
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using Microsoft.Xna.Framework;

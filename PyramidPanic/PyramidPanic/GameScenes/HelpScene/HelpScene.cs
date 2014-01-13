@@ -1,5 +1,4 @@
-﻿// met using kan je een XNA codebibliotheek gebruiken in je class
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using Microsoft.Xna.Framework;
@@ -12,49 +11,48 @@ using Microsoft.Xna.Framework.Media;
 
 namespace PyramidPanic
 {
-    public class HelpScene : IState
-    {
-        // Fields can de class helpscene
-        private PyramidPanic game;
+   public class HelpScene : IState
 
-        // Contructor van de helpscene-class krijgt een object mee van het type PyramidPanic
+    {
+         //FieldAccessException van decimal class PlayScene
+        private PyramidPanic game;
+   
         public HelpScene(PyramidPanic game)
         {
             this.game = game;
         }
-
-        // Initialize mehode. Deze methode initialiseert (geeft startwaarden aan variabelen)
-        // Void will zeggen dat er niets teruggegeven wordt
-        public void Initialize()
+        
+        //initialize methode. Deze methode initialiseert (geeft startwaarden aan variabelen)
+        //void wil zeggen dat er niets teruggegeven wordt.
+        public void initialize()
         {
-
+                
         }
 
-        // LoadContent methode. Deze methode maakt nieuwe objecten aan van de verschillende classes
+        //loadcontent methode. Deze methode maakt nieuwe objecten aan van de verschillende
+        //classes.
         public void LoadContent()
         {
 
         }
 
-        // Update methode. Deze methode wordt normaal 60 keer per seconde aangeroepen.
-        // en update alle variabelen, methods enz......
-        public void Update(GameTime gametime)
+        //update methode. Deze methode wordt normaal 60 maal per seconde aangeroepen.
+        //en update alle variabelen, methods enz...
+        //update methode. Deze methode wordt normaal 60 maal per seconde aangeroepen.
+        //en update alle variabelen, methods enz...
+        public void Update(GameTime gameTime)
         {
-            if (Input.EdgeDetectKeyDown(Keys.Right))
+            if (Input.EdgeDetectKeyDown(Keys.B))
             {
-                this.game.IState = this.game.GameOverScene;
-            }
-            if (Input.EdgeDetectKeyDown(Keys.Left))
-            {
-                this.game.IState = this.game.PlayScene;
+                this.game.IState = this.game.StartScene;
             }
         }
 
-        // Draw methode. Deze methode word normaal 60 keer per seconde aangeroepen.
-        // En tekent de textures op het canvas.
-        public void Draw(GameTime gametime)
+        //draw methode. Deze methode wordt normaal 60 maal per seconde aangeroepen en 
+        // tekent de textures op het canvas
+        public void Draw(GameTime gameTime)
         {
-            this.game.GraphicsDevice.Clear(Color.Beige);
+            this.game.GraphicsDevice.Clear(Color.DeepPink);
         }
     }
 }

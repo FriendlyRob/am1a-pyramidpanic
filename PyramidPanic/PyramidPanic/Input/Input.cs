@@ -1,5 +1,4 @@
-﻿// met using kan je een XNA codebibliotheek gebruiken in je class
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using Microsoft.Xna.Framework;
@@ -14,8 +13,8 @@ namespace PyramidPanic
 {
     public static class Input
     {
-        // Fields
-        // KeybourdStates voor Edge-detection
+        //Fields
+        // KeyboardStates voor edge-detection 
         private static KeyboardState ks, oks;
 
         // MouseStates voor edge-detection
@@ -24,7 +23,9 @@ namespace PyramidPanic
         // Dit is een rectangle die aan de muiscursor zit vastgeplakt
         private static Rectangle mouseRect;
 
-        // Constructor
+
+
+        //Constructor
         static Input()
         {
             ks = Keyboard.GetState();
@@ -34,8 +35,7 @@ namespace PyramidPanic
             mouseRect = new Rectangle(ms.X, ms.Y, 1, 1);
         }
 
-
-        // Update
+        //Update
         public static void Update()
         {
             oks = ks;
@@ -44,8 +44,8 @@ namespace PyramidPanic
             ms = Mouse.GetState();
         }
 
-        // Dit is een edgedetector voor het signaleren of een knop nu 
-        // ingedrukt is en de vorige Update niet ingedrukt was
+        // Dit is een edgedetector voor het signaleren of een knop nu ingedrukt is en
+        // de vorige Update niet ingedrukt was
         public static bool EdgeDetectKeyDown(Keys key)
         {
             return (ks.IsKeyDown(key) && oks.IsKeyUp(key));
@@ -57,19 +57,19 @@ namespace PyramidPanic
         {
             return (ks.IsKeyUp(key) && oks.IsKeyDown(key));
         }
-        
+
         // Dit is een edgedetector voor het indrukken van de linkermuisknop
         public static bool EdgeDetectMousePressLeft()
         {
-            return ((ms.LeftButton == ButtonState.Pressed)
-                && (oms.LeftButton == ButtonState.Released));
+            return ((ms.LeftButton == ButtonState.Pressed) &&
+                    (oms.LeftButton == ButtonState.Released));
         }
 
         // Dit is een edgedetector voor het indrukken van de rechtermuisknop
         public static bool EdgeDetectMousePressRight()
         {
-            return ((ms.RightButton == ButtonState.Pressed)
-                && (oms.RightButton == ButtonState.Released));
+            return ((ms.RightButton == ButtonState.Pressed) &&
+                    (oms.RightButton == ButtonState.Released));
         }
 
         // Dit is een leveldetector voor het detecteren of een keyboardtoets is ingedrukt
