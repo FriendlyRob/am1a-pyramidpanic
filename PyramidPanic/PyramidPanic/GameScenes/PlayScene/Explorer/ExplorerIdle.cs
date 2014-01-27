@@ -71,6 +71,11 @@ namespace PyramidPanic
                 this.explorer.State = this.explorer.WalkDown;
                 this.explorer.WalkDown.Initialize();
             }
+            else if (Input.LevelDetectKeyDown(Keys.Up))
+            {
+                this.explorer.State = this.explorer.WalkUp;
+                this.explorer.WalkUp.Initialize();
+            }
 
             this.explorer.Position += this.velocity;
             this.destinationRectangle.X = (int)this.explorer.Position.X;
