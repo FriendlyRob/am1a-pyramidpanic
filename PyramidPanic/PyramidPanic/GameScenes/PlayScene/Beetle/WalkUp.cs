@@ -40,7 +40,7 @@ namespace PyramidPanic
 
         public new void Update(GameTime gameTime)
         {
-            if (this.beetle.Position.Y < 0)
+            if (this.beetle.Position.Y < (0+16))
             {
                 //Breng de beetle in de toestand walkdown
                 this.beetle.State = this.beetle.WalkDown;
