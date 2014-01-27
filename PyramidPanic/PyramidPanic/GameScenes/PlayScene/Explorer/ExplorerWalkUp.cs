@@ -55,7 +55,6 @@ namespace PyramidPanic
                 this.explorer.IdleWalk.Rotation = -(float)Math.PI / 2;             
             }
             
-
             // Als de Right knop wordt losgelaten, dan moet de 
             // explorer weer in de toestand Idle komen
             if (Input.EdgeDetectKeyUp(Keys.Up))
