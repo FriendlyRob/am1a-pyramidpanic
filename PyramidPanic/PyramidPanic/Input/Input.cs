@@ -1,4 +1,5 @@
-﻿using System;
+﻿// Met using kan je een XNA codebibliotheek toevoegen en gebruiken in je class
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using Microsoft.Xna.Framework;
@@ -48,7 +49,7 @@ namespace PyramidPanic
         // de vorige Update niet ingedrukt was
         public static bool EdgeDetectKeyDown(Keys key)
         {
-            return (ks.IsKeyDown(key) && oks.IsKeyUp(key));
+           return (ks.IsKeyDown(key) && oks.IsKeyUp(key));
         }
 
         // Dit is een edgedetector voor het signaleren of een knop niet ingedrukt is
@@ -61,8 +62,8 @@ namespace PyramidPanic
         // Dit is een edgedetector voor het indrukken van de linkermuisknop
         public static bool EdgeDetectMousePressLeft()
         {
-            return ((ms.LeftButton == ButtonState.Pressed) &&
-                    (oms.LeftButton == ButtonState.Released));
+            return ((ms.LeftButton == ButtonState.Pressed)  && 
+                    (oms.LeftButton == ButtonState.Released) );
         }
 
         // Dit is een edgedetector voor het indrukken van de rechtermuisknop

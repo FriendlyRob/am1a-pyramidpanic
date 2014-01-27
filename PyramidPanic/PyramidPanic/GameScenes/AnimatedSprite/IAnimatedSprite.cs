@@ -1,4 +1,5 @@
-﻿using System;
+﻿// Met using kan je een XNA codebibliotheek toevoegen en gebruiken in je class
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using Microsoft.Xna.Framework;
@@ -13,9 +14,7 @@ namespace PyramidPanic
 {
     public interface IAnimatedSprite
     {
-        PyramidPanic Game {get;}
-        Texture2D Texture {get;}
-
-        void Update(GameTime gameTime);
+        PyramidPanic Game { get; }
+        Texture2D Texture { get; }
     }
 }

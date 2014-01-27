@@ -1,4 +1,5 @@
-﻿using System;
+﻿// Met using kan je een XNA codebibliotheek toevoegen en gebruiken in je class
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using Microsoft.Xna.Framework;
@@ -11,21 +12,21 @@ using Microsoft.Xna.Framework.Media;
 
 namespace PyramidPanic
 {
-    public abstract class AnimatedSprite
+    public class AnimatedSprite
     {
         //Fields
+        private IAnimatedSprite iAnimatedSprite;
         protected Rectangle destinationRectangle, sourceRectangle;
         private float timer = 0f;
         protected SpriteEffects effect;
-        private IAnimatedSprite iAnimatedSprite;
-        //Propeties
+        protected int imageNumber = 1; //Loopt van 0 tm 3
+        protected float rotation = 0f;
 
-        //Constructor
+        // De constructor
         public AnimatedSprite(IAnimatedSprite iAnimatedSprite)
         {
             this.iAnimatedSprite = iAnimatedSprite;
-            this.sourceRectangle = new Rectangle(64, 0, 32, 32);
-
+            this.sourceRectangle = new Rectangle(this.imageNumber * 32, 0, 32, 32);            
             this.effect = SpriteEffects.None;
         }
 
@@ -42,24 +43,23 @@ namespace PyramidPanic
                 {
                     this.sourceRectangle.X = 0;
                 }
-
                 this.timer = 0f;
             }
-
             this.timer += 1 / 60f;
         }
 
-        //Draw
+
+        // Draw method van de AnimatedSprite class
         public void Draw(GameTime gameTime)
         {
             this.iAnimatedSprite.Game.SpriteBatch.Draw(this.iAnimatedSprite.Texture,
-                                                this.destinationRectangle,
-                                                this.sourceRectangle,
-                                                Color.White,
-                                                0f,
-                                                Vector2.Zero,
-                                                this.effect,
-                                                0f);
+                                              this.destinationRectangle,
+                                              this.sourceRectangle,
+                                              Color.White,
+                                              this.rotation,
+                                              Vector2.Zero,
+                                              this.effect,
+                                              0f);              
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿// Met using kan je een XNA codebibliotheek toevoegen en gebruiken in je class
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using Microsoft.Xna.Framework;
@@ -13,31 +14,31 @@ namespace PyramidPanic
 {
     public class LoadScene : IState
     {
-        //FieldAccessException van decimal class PlayScene
+        //Fields van de class StartScene
         private PyramidPanic game;
 
-        // Constructor van PlayScene-class krijgt een object game mee van het type PyramidPanic
+        // Constructor van de StartScene-class krijgt een object game mee van het type PyramidPanic
         public LoadScene(PyramidPanic game)
         {
             this.game = game;
         }
 
-        //initialize methode. Deze methode initialiseert (geeft startwaarden aan variabelen)
-        //void wil zeggen dat er niets teruggegeven wordt.
-        public void initialize()
+        // Initialize methode. Deze methode initialiseert (geeft startwaarden aan variabelen).
+        // Void wil zeggen dat er niets teruggegeven wordt.
+        public void Initialize()
         {
 
         }
 
-        //loadcontent methode. Deze methode maakt nieuwe objecten aan van de verschillende
-        //classes.
+        // LoadContent methode. Deze methode maakt nieuwe objecten aan van de verschillende
+        // classes.
         public void LoadContent()
         {
 
         }
 
-        //update methode. Deze methode wordt normaal 60 maal per seconde aangeroepen.
-        //en update alle variabelen, methods enz...
+        // Update methode. Deze methode wordt normaal 60 maal per seconde aangeroepen.
+        // en update alle variabelen, methods enz.......
         public void Update(GameTime gameTime)
         {
             if (Input.EdgeDetectKeyDown(Keys.B))
@@ -46,11 +47,11 @@ namespace PyramidPanic
             }
         }
 
-        //draw methode. Deze methode wordt normaal 60 maal per seconde aangeroepen en 
+        // Draw methode. Deze methode wordt normaal 60 maal per seconde aangeroepen en
         // tekent de textures op het canvas
         public void Draw(GameTime gameTime)
         {
-            this.game.GraphicsDevice.Clear(Color.Chocolate);
+            this.game.GraphicsDevice.Clear(Color.Black);
         }
     }
 }

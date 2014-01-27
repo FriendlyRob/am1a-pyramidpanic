@@ -1,1 +1,1 @@
-Dit is de lokale repo van project PyramidPanic.
+Dit is de lokale repository van het project Pyramid Panic.
