@@ -115,6 +115,7 @@
     <Compile Include="GameScenes\LoadScene\LoadScene.cs" />
     <Compile Include="GameScenes\PlayScene\Beetle\Beetle.cs" />
     <Compile Include="GameScenes\PlayScene\Beetle\WalkDown.cs" />
+    <Compile Include="GameScenes\PlayScene\Block\Block.cs" />
     <Compile Include="GameScenes\PlayScene\Explorer\ExplorerWalkUp.cs" />
     <Compile Include="GameScenes\PlayScene\Explorer\ExplorerIdleWalk.cs" />
     <Compile Include="GameScenes\PlayScene\Explorer\ExplorerWalkDown.cs" />
