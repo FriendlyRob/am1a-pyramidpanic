@@ -86,6 +86,7 @@ namespace PyramidPanic
              * knopkleur naar de activeColor waarde. Door ook nog met de muis
              * links te klikken ga je naar de betreffende gameScene
              */
+            // PLAY
             if (this.start.Rectangle.Intersects(Input.MouseRect()))
             {
                 if (Input.EdgeDetectMousePressLeft())
@@ -96,6 +97,7 @@ namespace PyramidPanic
                 this.buttonActive = Buttons.Start;
                 this.start.Color = this.activeColor;
             }
+            // LOAD
             else if (this.load.Rectangle.Intersects(Input.MouseRect()))
             {
                 if (Input.EdgeDetectMousePressLeft())
@@ -106,18 +108,21 @@ namespace PyramidPanic
                 this.buttonActive = Buttons.Load;
                 this.load.Color = this.activeColor;
             }
+            // HELP
             else if (this.help.Rectangle.Intersects(Input.MouseRect()))
             {
                 this.ChangeButtonColorToNormal();
                 this.buttonActive = Buttons.Help;
                 this.help.Color = this.activeColor;
             }
+            // HELP
             else if (this.scores.Rectangle.Intersects(Input.MouseRect()))
             {
                 this.ChangeButtonColorToNormal();
                 this.buttonActive = Buttons.Scores;
                 this.scores.Color = this.activeColor;
             }
+            // QUIT
             else if (this.quit.Rectangle.Intersects(Input.MouseRect()))
             {
                 if (Input.EdgeDetectMousePressLeft())
