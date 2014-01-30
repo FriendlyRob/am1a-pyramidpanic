@@ -10,6 +10,7 @@ using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Media;
 
+// IAnimated sprite
 namespace PyramidPanic
 {
     public interface IAnimatedSprite

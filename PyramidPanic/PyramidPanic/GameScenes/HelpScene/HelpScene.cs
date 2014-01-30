@@ -41,10 +41,12 @@ namespace PyramidPanic
         // en update alle variabelen, methods enz.......
         public void Update(GameTime gameTime)
         {
+            // Right key is gameoverscene
             if (Input.EdgeDetectKeyDown(Keys.Right))
             {
                 this.game.IState = this.game.GameOverScene;
             }
+            // Left key is playscene
             if (Input.EdgeDetectKeyDown(Keys.Left))
             {
                 this.game.IState = this.game.PlayScene;

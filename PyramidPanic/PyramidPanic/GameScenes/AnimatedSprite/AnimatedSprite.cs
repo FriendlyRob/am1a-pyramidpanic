@@ -35,14 +35,17 @@ namespace PyramidPanic
             // Dit zorgt dat dat de animated sprite goed werkt
             this.iAnimatedSprite = iAnimatedSprite;
             // Hier woorde met de sourcerect gebruik gemaakt van het imageNumber variabel
-            this.sourceRectangle = new Rectangle(this.imageNumber * 32, 0, 32, 32);            
+            this.sourceRectangle = new Rectangle(this.imageNumber * 32, 0, 32, 32);  
+            // effect vooral gebruit voor flippen
             this.effect = SpriteEffects.None;
+            // pivot is draaipunt
             this.pivot = new Vector2(16f, 16f);
         }
 
         //Update
         public void Update(GameTime gameTime)
         {
+            // timer van de updatefunctie die wordt gebruikt voor de source rect
             if (this.timer > 5 / 60f)
             {
                 if (this.sourceRectangle.X < 96)
@@ -62,6 +65,8 @@ namespace PyramidPanic
         // Draw method van de AnimatedSprite class
         public void Draw(GameTime gameTime)
         {
+            // Dit is dde draw methode van de iAnimatedsprite, het maakt gebruik van de 
+            // Spritebatch, hier wordt ook het pivot punt gebruikt
             this.iAnimatedSprite.Game.SpriteBatch.Draw(this.iAnimatedSprite.Texture,
                                               this.destinationRectangle,
                                               this.sourceRectangle,
