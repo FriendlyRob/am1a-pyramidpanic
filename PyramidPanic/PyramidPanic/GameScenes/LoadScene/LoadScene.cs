@@ -10,6 +10,7 @@ using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Media;
 
+// Load scene
 namespace PyramidPanic
 {
     public class LoadScene : IState
@@ -41,6 +42,7 @@ namespace PyramidPanic
         // en update alle variabelen, methods enz.......
         public void Update(GameTime gameTime)
         {
+            // De B knop zorgt ervoor dat de state naar Startscene wisselt
             if (Input.EdgeDetectKeyDown(Keys.B))
             {
                 this.game.IState = this.game.StartScene;
