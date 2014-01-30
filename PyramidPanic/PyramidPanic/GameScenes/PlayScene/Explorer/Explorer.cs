@@ -71,28 +71,38 @@ namespace PyramidPanic
         {
             get { return this.idleWalk; }
         }
+        // Position propertie 
+        // deze geeft ook een setter
         public Vector2 Position
         {
             get { return this.position; }
-            set { this.position = value;
-            this.state.Initialize();
+            set 
+            { 
+                this.position = value;
+                this.state.Initialize();
             }
         }
+        // ientitystate 
+        // Heeft alleen maar setter want getteer is bij het veranderen van states niet nodig
         public IEntityState State
         {
-            set { 
-                    this.state = value;
-                    this.state.Initialize();
-                }
+            set 
+            { 
+                this.state = value;
+                this.state.Initialize();
+            }
         }
+        // game propertie
         public PyramidPanic Game
         {
             get { return this.game; }
         }
+        // speed propertie
         public int Speed
         {
             get { return this.speed; }
         }
+        // texture propertie
         public Texture2D Texture
         {
             get { return this.texture; }
@@ -101,15 +111,30 @@ namespace PyramidPanic
         //Constructor
         public Explorer(PyramidPanic game, Vector2 position)
         {
+            // Hier zijn alle gegevens die worden meegegeven aan de propertie van de explorer
+            // game
             this.game = game;
+            // positie van de explorer
             this.position = position;
+            // de sprite van de exporer ( @"Explorer\Explorer" dit geeft aan de route naar het plaatje
+            // dat gebruikt voort voor de explorer)
             this.texture = game.Content.Load<Texture2D>(@"Explorer\Explorer");
+            // de states van de explorer
+            // walkup
             this.walkUp = new ExplorerWalkUp(this);
+            // walkdown
             this.walkDown = new ExplorerWalkDown(this);
+            // walkleft
             this.walkLeft = new ExplorerWalkLeft(this);
+            // walkright
             this.walkRight = new ExplorerWalkRight(this);
+            // idle (not walk)
             this.idle = new ExplorerIdle(this);
+            // idlewalk
             this.idleWalk = new ExplorerIdleWalk(this);
+
+            // De beginstate van de explorer is idle want als je start
+            // Ben je nog niks aan het doen dus dan is idle de juiste state
             this.state = this.idle;
         }
 
