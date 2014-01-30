@@ -10,12 +10,13 @@ using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Media;
 
+// block
 namespace PyramidPanic
 {
     public class Block : Image
     {
         // fields
-
+        // nog geen fields op dit moment
 
         // properties
 
@@ -23,9 +24,8 @@ namespace PyramidPanic
         public Block(PyramidPanic game, string pathNameAsset, Vector2 position) 
               : base(game, pathNameAsset, position)
         {
- 
-
-
+            // Begin van de constuctor
+            // Nog niet klaar
         }
 
         // update

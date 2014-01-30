@@ -16,41 +16,57 @@ namespace PyramidPanic
     {
         //Fields
         private PyramidPanic game;
+        // entitystate zorgt voor de states
         private IEntityState state;
+        // texture voor de sprite
         private Texture2D texture;
+        // speed = snelheid van de explorer
         private int speed = 2;
+        // positie van explorer wordt ook gebruikt (zeer belangrijk)
         private Vector2 position;
 
         //Maak van iedere toestand (state) een field
+        // Hier zijn alle states waar de explorer aan kan voldoen
+        // walkup
         private ExplorerWalkUp walkUp;
+        //Walkdown
         private ExplorerWalkDown walkDown;
+        // Walksleft
         private ExplorerWalkLeft walkLeft;
+        // Walkright
         private ExplorerWalkRight walkRight;
+        // idle (niet aan het walken)
         private ExplorerIdle idle;
+        // idle (wel walken)
         private ExplorerIdleWalk idleWalk;
 
         //properties
-        
+        // Walkup propertie
         public ExplorerWalkUp WalkUp
         {
             get { return this.walkUp; }
         }       
+        // Walkdown proppertie
         public ExplorerWalkDown WalkDown
         {
             get { return this.walkDown; }
         }
+        // Walkleft Propertie
         public ExplorerWalkLeft WalkLeft
         {
             get { return this.walkLeft; }
         }
+        // Walkright propertie
         public ExplorerWalkRight WalkRight
         {
             get { return this.walkRight;}
         }
+        // Idle propertie
         public ExplorerIdle Idle
         {
             get { return this.idle; }
         }
+        // Idlewalk propertie
         public ExplorerIdleWalk IdleWalk
         {
             get { return this.idleWalk; }
