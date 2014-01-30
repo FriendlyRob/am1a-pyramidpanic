@@ -16,18 +16,25 @@ namespace PyramidPanic
     {
         //Fields
         private IAnimatedSprite iAnimatedSprite;
+        // 2 rectangle variables aangemaakt 
         protected Rectangle destinationRectangle, sourceRectangle;
+        // een timer (handig voor update method)
         private float timer = 0f;
+        // effect variabele (handig voor flipeffecten)
         protected SpriteEffects effect;
         protected int imageNumber = 1; //Loopt van 0 tm 3
+        // een rotatie variabele
         protected float rotation = 0f;
+        // pivot = draaipunt, zorgt ervoor dat de main character fijn (smooth) kan draaien
         private Vector2 pivot;
 
 
         // De constructor
         public AnimatedSprite(IAnimatedSprite iAnimatedSprite)
         {
+            // Dit zorgt dat dat de animated sprite goed werkt
             this.iAnimatedSprite = iAnimatedSprite;
+            // Hier woorde met de sourcerect gebruik gemaakt van het imageNumber variabel
             this.sourceRectangle = new Rectangle(this.imageNumber * 32, 0, 32, 32);            
             this.effect = SpriteEffects.None;
             this.pivot = new Vector2(16f, 16f);
